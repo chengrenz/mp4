@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.demo.PluginMiniMp4"
+    version="0.0.1">
+
+    <name>TestPlugin</name>
+    <description>
+       description
+    </description>
+    <license>MIT</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/PluginMiniMp4.js">
+       <clobbers target="cordova/plugins/PluginMiniMp4" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PluginMiniMp4">
+                <param name="android-package" value="com.demo.PluginMiniMp4"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+		  <activity android:name="com.demo.MiniMp4Activity"></activity>
+		</config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+		     <!-- 授予该程序录制声音的权限 -->
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <!-- 授予该程序使用摄像头的权限 -->
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+            <!-- 授予使用外部存储器的权限 -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+  		<source-file src="src/android/PluginMiniMp4.java" target-dir="src/com/demo" />
+        <source-file src="src/android/Library/src/com/demo/MiniMp4Activity.java" target-dir="src/com/demo" />
+      
+
+        
+
+        <source-file src="src/android/Library/res/drawable/play.png" target-dir="res/drawable"/>
+		<source-file src="src/android/Library/res/drawable/sd.png" target-dir="res/drawable"/>
+        <source-file src="src/android/Library/res/drawable/sd_2.png" target-dir="res/drawable"/>
+        <source-file src="src/android/Library/res/drawable/start.png" target-dir="res/drawable"/>
+        <source-file src="src/android/Library/res/drawable/stop.png" target-dir="res/drawable"/>
+        <source-file src="src/android/Library/res/drawable/switchbtn.png" target-dir="res/drawable"/>
+        <source-file src="src/android/Library/res/layout/activity_main2.xml" target-dir="res/layout"/>
+    </platform>
+   
+</plugin>

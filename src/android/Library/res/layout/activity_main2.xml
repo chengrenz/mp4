@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 显示视频预览的SurfaceView -->
+    <SurfaceView
+        android:id="@+id/sView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#66282828"
+        android:gravity="center"
+        android:padding="8dp"
+        android:id="@+id/ll_time">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+          />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_sd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#66282828"
+        android:padding="8dp"
+        android:layout_alignBottom="@+id/ll_time"
+        android:visibility="gone">
+
+        <RadioGroup
+            android:id="@+id/rg_sd"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true">
+
+            <RadioButton
+                android:id="@+id/rb_auto"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动"
+                android:textColor="#f2dc4d"
+                android:buttonTint="#00000000"/>
+
+            <RadioButton
+                android:id="@+id/rb_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打开"
+                android:buttonTint="#00000000"
+                android:textColor="#fff"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <RadioButton
+                android:id="@+id/rb_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关闭"
+                android:textColor="#fff"
+                android:buttonTint="#00000000"/>
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_sd"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/sd"/>
+
+    <RelativeLayout
+        android:id="@+id/footer_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:background="#66282828"
+        >
+
+        <TextView
+            android:id="@+id/tv_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频"
+            android:layout_centerHorizontal="true"
+            android:textColor="#f2dc4d"/>
+
+        <ImageView
+            android:id="@+id/record"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@drawable/start"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_sp"
+            android:paddingBottom="12dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:layout_alignTop="@+id/record"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
+
+        <ImageView
+            android:id="@+id/switchbtn"
+            android:layout_width="32sp"
+            android:layout_height="28sp"
+            android:scaleType="fitXY"
+            android:src="@drawable/switchbtn"
+            android:layout_alignTop="@+id/record"
+            android:layout_marginTop="24dp"
+            android:layout_alignParentRight="true"
+            />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/record_stop"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/stop"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:background="#66282828"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tv_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重拍"
+            android:textColor="#ffffff"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_play"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="28dp"-->
+            <!--android:src="@drawable/play"-->
+            <!--android:scaleType="fitXY"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--/>-->
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="使用视频"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:textSize="20sp"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
